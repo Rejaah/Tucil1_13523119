@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
-        System.out.print("Masukkan file input: ");
+        System.out.print("\nMasukkan file input: ");
         String inputFile = userInput.nextLine();
 
         try {
@@ -78,25 +78,26 @@ public class Main {
             System.out.println("Waktu pencarian: " + executionTime + " ms\n");
             System.out.println("Banyak kasus yang ditinjau: " + solver.getAttemptCount() + "\n");
 
-            System.out.println("Apakah anda ingin menyimpan solusi? (y/n)\n");
+            System.out.println("Apakah anda ingin menyimpan solusi? (y/n)");
             String save = userInput.nextLine().trim().toLowerCase();
 
             if (save.equals("y")) {
-                System.out.println("Masukkan nama file output: ");
+                System.out.println("\nMasukkan nama file output: ");
                 String outputFile = userInput.nextLine();
                 try (PrintWriter writer = new PrintWriter(outputFile)) {
                     writer.println(result);
-                    System.out.println("Hasil telah disimpan di " + outputFile);
+                    System.out.println("\nHasil telah disimpan di " + outputFile + "\n");
                 } catch (IOException e) {
                     System.out.println("Gagal menyimpan file output: " + e.getMessage());
                 }
             }
         } catch (FileNotFoundException e) {
-            System.out.println("File tidak ditemukan");
+            System.out.println("\nFile tidak ditemukan\n");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
+        System.out.println();
         userInput.close();
     }
 }
