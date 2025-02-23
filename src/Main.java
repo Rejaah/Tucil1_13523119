@@ -70,23 +70,29 @@ public class Main {
                 System.out.println(board.getBoardString(true));
             } else {
                 result.append("Solusi tidak ditemukan.\n");
-                System.out.println("Solusi tidak ditemukan.");
+                System.out.println("\nSolusi tidak ditemukan.");
             }
 
-            result.append("Waktu pencarian: ").append(executionTime).append(" ms\n");
-            result.append("Banyak kasus yang ditinjau: ").append(solver.getAttemptCount()).append("\n");
+            result.append("Waktu pencarian: ").append(executionTime).append(" ms\n\n");
+            result.append("Banyak kasus yang ditinjau: ").append(solver.getAttemptCount());
             System.out.println("Waktu pencarian: " + executionTime + " ms\n");
-            System.out.println("Banyak kasus yang ditinjau: " + solver.getAttemptCount() + "\n");
+            System.out.println("Banyak kasus yang ditinjau: " + solver.getAttemptCount());
 
-            System.out.println("Apakah anda ingin menyimpan solusi? (y/n)");
+            System.out.println("\nApakah anda ingin menyimpan solusi? (y/n)");
             String save = userInput.nextLine().trim().toLowerCase();
 
             if (save.equals("y")) {
                 System.out.println("\nMasukkan nama file output: ");
-                String outputFile = userInput.nextLine();
+                String outputName = userInput.nextLine();
+                String outputFolder = "../test/output";
+                File folder = new File(outputFolder);
+                if (!folder.exists()) {
+                    folder.mkdirs();
+                }
+                File outputFile = new File(folder, outputName);
                 try (PrintWriter writer = new PrintWriter(outputFile)) {
                     writer.println(result);
-                    System.out.println("\nHasil telah disimpan di " + outputFile + "\n");
+                    System.out.println("\nHasil telah disimpan di " + outputFile);
                 } catch (IOException e) {
                     System.out.println("Gagal menyimpan file output: " + e.getMessage());
                 }
