@@ -67,9 +67,11 @@ public class Board {
 
         for (int r = 0; r < pieceRows; r++) {
             for (int c = 0; c < pieceCols; c++) {
-                board[row + r][col + c] = shape[r][c];
-                if (!colorMap.containsKey(shape[r][c])) {
-                    colorMap.put(shape[r][c], colors[colorMap.size()]);
+                if (shape[r][c] != ' ') {
+                    board[row + r][col + c] = shape[r][c];
+                    if (!colorMap.containsKey(shape[r][c])) {
+                        colorMap.put(shape[r][c], colors[colorMap.size()]);
+                    }
                 }
             }
         }
