@@ -5,11 +5,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         System.out.print("\nMasukkan file input: ");
-        String inputFile = userInput.nextLine();
-
+        String inputName = userInput.nextLine();
+        String inputFolder = "../test/input";
+        File inputFile = new File(inputFolder, inputName);
         try {
-            File file = new File(inputFile);
-            Scanner input = new Scanner(file);
+            Scanner input = new Scanner(inputFile);
             int N = input.nextInt();
             int M = input.nextInt();
             int P = input.nextInt();
