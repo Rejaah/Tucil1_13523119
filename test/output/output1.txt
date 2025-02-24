@@ -1,10 +1,9 @@
-Solusi ditemukan!
-A B F F F 
-C A B A F 
-D C A B E 
-C D B E G 
-D B E G G 
+A G G G C 
+A A B C C 
+E E B B F 
+E E D F F 
+E D D F F 
 
-Waktu pencarian: 0 ms
+Waktu Pencarian: 84 ms
 
-Banyak kasus yang ditinjau: 130
+Banyak kasus yang ditinjau: 1313257

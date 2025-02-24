@@ -1,0 +1,14 @@
+R A A A A A A A A A I I 
+R A A A A A A A A A I I 
+B B B B B B A A A A I I 
+B B B B B B A A A A A A 
+B B B B B B A A A A A A 
+K A A A A A A A A A A A 
+K A A A A A A A A A A A 
+K A A A A A A A A A N N 
+K A A A V V V A A A N N 
+K A A A V V V A A A N N 
+
+Waktu Pencarian: 0 ms
+
+Banyak kasus yang ditinjau: 15175
