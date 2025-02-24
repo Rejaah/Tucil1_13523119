@@ -79,7 +79,7 @@ public class Piece {
         return trimShape(rotated);
     }
 
-    private char[][] flip(char[][] piece) {
+    private char[][] flipHorizontal(char[][] piece) {
         int rows = piece.length;
         int cols = piece[0].length;
         char[][] flipped = new char[rows][cols];
@@ -91,6 +91,18 @@ public class Piece {
         return trimShape(flipped);
     }
 
+    private char[][] flipVertical(char[][] piece) {
+        int rows = piece.length;
+        int cols = piece[0].length;
+        char[][] flipped = new char[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                flipped[i][j] = piece[rows - i - 1][j];
+            }
+        }
+        return trimShape(flipped);
+    }    
+
     public List<Piece> generateVariations() {
         Set<String> uniqueVariations = new HashSet<>();
         List<Piece> variations = new ArrayList<>();
@@ -98,7 +110,7 @@ public class Piece {
         char[][] currentPiece = piece;
     
         for (int i = 0; i < 4; i++) {
-            for (char[][] variation : new char[][][]{currentPiece, flip(currentPiece)}) {
+            for (char[][] variation : new char[][][]{currentPiece, flipHorizontal(currentPiece), flipVertical(currentPiece)}) {
                 String key = Arrays.deepToString(variation);
                 if (uniqueVariations.add(key)) { 
                     variations.add(new Piece(variation, label));
